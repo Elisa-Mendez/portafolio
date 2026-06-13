@@ -791,7 +791,7 @@ header {
     color: white;
 }
 
-.modal-titulo {
+.modal-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     color: var(--oscuro);
