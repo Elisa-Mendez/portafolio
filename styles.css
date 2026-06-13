@@ -4,6 +4,8 @@
     --oscuro: #000c1c;
     --turquesa: #207678;
     --rey: #031629;
+    --verde-boton: #2a7d6e;
+    --verde-boton-hover: #23685b;
 }
 
 * {
@@ -823,4 +825,124 @@ header {
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: 500;
+}
+
+/*FOOTER*/
+.footer-content {
+    background-color: var(--rey);
+}
+
+.footer-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-left,
+.footer-center{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: auto 1rem;
+}
+
+.footer-left {
+    padding-left: 2rem;
+ }
+
+.footer-hablemos {
+    color: var(--verde-boton);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.footer-conversemos,
+.mente{
+    color: var(--base);
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.boton-contactame {
+    background-color: var(--verde-boton); /* El color verde que venimos usando */
+    color: white;
+    padding: 10px 20px;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 8px; /* Esquinas redondeadas */
+    font-size: 16px;
+    font-weight: 600;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el texto y el icono */
+
+    /* Interacción */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+.boton-contactame:hover {
+    background-color: var(--verde-boton-hover); /* Un tono un poco más oscuro al pasar el cursor */
+    transform: translateY(-2px); /* Un pequeño levantamiento */
+}
+
+/* Ajuste del span del icono */
+.boton-contactame span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mente {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.footer-bottom p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--base);
+    margin-top: 1rem;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espacio entre cada línea de contacto */
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center; /* Alineación vertical perfecta */
+    gap: 1.5rem; /* Separación entre el icono y el texto */
+    color: white; /* Ajusta según el fondo de tu footer */
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    margin-left: 3rem;
+}
+
+.footer-contact-item:hover {
+    opacity: 0.8; /* Efecto suave al pasar el mouse */
+}
+
+.footer-icon {
+    width: 2rem;
+    height: 2rem;
+    stroke: var(--base); /* Color verde que hemos estado usando */
+}
+
+.footer-right {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-image {
+    width: 15rem;   /* valor fijo en lugar de anchor-size() */
+    height: auto;
 }
