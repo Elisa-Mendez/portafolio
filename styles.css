@@ -96,7 +96,6 @@ header {
     font-weight: 500;
     padding-bottom: 3px;
     transition: color .3s ease;
-    
 }
 
 .menu a::after {
@@ -120,10 +119,6 @@ header {
 }
 
 #hero {
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 520px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,6 +131,9 @@ header {
 .hero-contenido {
     flex: 0 0 auto;
     width: 45%;
+    max-width: 1500px;
+    margin:  auto;
+    padding-left: 8rem;
 }
 
 .hero-contenido h3 {
@@ -262,7 +260,7 @@ header {
     gap: 56px;
     padding: 64px 48px;
     background: var(--base);
-    max-width: 1200px;
+    
     margin: 0 auto;
 }
 
@@ -271,6 +269,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    max-width: 1200px;
 }
 
 .trayectoria-descripcion .eyebrow {
@@ -866,31 +865,29 @@ header {
 }
 
 .boton-contactame {
-    background-color: var(--verde-boton); /* El color verde que venimos usando */
+    background-color: var(--verde-boton);
     color: white;
     padding: 10px 20px;
     margin-top: 0.5rem;
     border: none;
-    border-radius: 8px; /* Esquinas redondeadas */
+    border-radius: 8px; 
     font-size: 16px;
     font-weight: 600;
 
     display: inline-flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el texto y el icono */
+    gap: 10px;
 
-    /* Interacción */
+    text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Efecto al pasar el mouse */
+
 .boton-contactame:hover {
-    background-color: var(--verde-boton-hover); /* Un tono un poco más oscuro al pasar el cursor */
-    transform: translateY(-2px); /* Un pequeño levantamiento */
+    background-color: var(--verde-boton-hover); 
 }
 
-/* Ajuste del span del icono */
 .boton-contactame span {
     display: flex;
     align-items: center;
@@ -912,27 +909,27 @@ header {
 .footer-center {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Espacio entre cada línea de contacto */
+    gap: 1rem; 
 }
 
 .footer-contact-item {
     display: flex;
-    align-items: center; /* Alineación vertical perfecta */
-    gap: 1.5rem; /* Separación entre el icono y el texto */
-    color: white; /* Ajusta según el fondo de tu footer */
+    align-items: center; 
+    gap: 1.5rem; 
+    color: white; 
     text-decoration: none;
     transition: opacity 0.3s ease;
     margin-left: 3rem;
 }
 
 .footer-contact-item:hover {
-    opacity: 0.8; /* Efecto suave al pasar el mouse */
+    opacity: 0.8; 
 }
 
 .footer-icon {
     width: 2rem;
     height: 2rem;
-    stroke: var(--base); /* Color verde que hemos estado usando */
+    stroke: var(--base); 
 }
 
 .footer-right {
@@ -943,6 +940,179 @@ header {
 }
 
 .footer-image {
-    width: 15rem;   /* valor fijo en lugar de anchor-size() */
+    width: 15rem;   
     height: auto;
+}
+
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.hamburguesa span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--base);
+    border-radius: 2px;
+    transition: .3s ease;
+}
+
+.hamburguesa.activo span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburguesa.activo span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguesa.activo span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+@media (max-width: 768px) {
+
+    .hamburguesa {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--rey);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .4s ease;
+    }
+
+    .menu.activo {
+        max-height: 400px;
+    }
+
+    .menu a {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .navegacion-principal {
+        position: relative;
+    }
+
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-contenido {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        margin: 0;
+        order: 1;
+    }
+
+    .hero-imagen {
+        order: 0;
+        margin-bottom: 1rem;
+    }
+
+    .hero-imagen img {
+        max-width: 320px;
+    }
+
+    .hero-contenido h1 {
+        font-size: 2.5rem;
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sociales {
+        justify-content: center;
+    }
+
+    .habilidades-contenedor {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .habilidades-titulo {
+        flex: unset;
+    }
+
+    .habilidades-grid {
+        gap: 2rem;
+    }
+
+    .aprendiendo {
+        border-left: none;
+        border-top: 2px solid var(--turquesa);
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+
+    .proyectos-contenedor {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .proyectos-titulo {
+        flex: unset;
+        position: static;
+    }
+
+    .footer-body {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+        align-items: center;
+        margin: 1.5rem 0;
+    }
+
+    .footer-left {
+        padding-left: 0;
+    }
+
+    .footer-contact-item {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .footer-image {
+        width: 12rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-contenido h1 {
+        font-size: 2rem;
+    }
+
+    .habilidades-grid {
+        flex-direction: column;
+    }
 }

@@ -1,21 +1,21 @@
-<script>
+
     const proyectos = [
     {
-        titulo: "Sistema de Biblioteca",
-    imagen: "./im",
-    descripcionLarga: "Sistema completo para administrar una biblioteca. Permite registrar libros, gestionar usuarios, registrar prestamos y devoluciones. Implementa CRUD completo con Java y conexion a base de datos MySQL mediante JDBC.",
-    tags: ["Java", "MySQL", "JDBC", "HTML", "CSS"],
-    codigo: "https://github.com/TU_USUARIO/repo1",
-    demo: "#"
-        },
-    {
-        titulo: "Gestor de Tareas",
-    imagen: "./img/proyecto2.png",
-    descripcionLarga: "Aplicacion para organizar tareas del dia a dia. Permite crear, editar, marcar como completadas y eliminar tareas. Usa localStorage para persistencia de datos.",
+        titulo: "Tienda de Kung Fu",
+    imagen: "./img/tiendakungfu.jpg",
+    descripcionLarga: "Sitio web promocional para una tienda de artículos de Kung Fu, con enfoque en diseño responsivo y experiencia de usuario.",
     tags: ["HTML", "CSS", "JavaScript"],
-    codigo: "https://github.com/TU_USUARIO/repo2",
-    demo: "#"
-        },
+    codigo: "https://github.com/Elisa-Mendez/kungfushop-Hackathon.git",
+    demo: "https://alanhercas.github.io/kungfushop-Hackathon/"
+    },
+    {
+        titulo: "Mini store",
+    imagen: "./img/minitienda.jpg",
+    descripcionLarga: "Proyecto de práctica enfocado en el desarrollo de una mini tienda online, aplicando conceptos de maquetación web, diseño responsivo y experiencia de usuario.",
+    tags: ["HTML", "CSS"],
+    codigo: "https://github.com/Elisa-Mendez/ministore.git",
+    demo: "https://elisa-mendez.github.io/ministore/"
+    },
     {
         titulo: "Mini cafeteria",
     imagen: "./img/cafeteria.jpg",
@@ -23,7 +23,7 @@
     tags: ["HTML", "CSS"],
     codigo: "https://github.com/Elisa-Mendez/cafeteriaDos.git",
     demo: "https://elisa-mendez.github.io/cafeteriaDos/"
-        }
+    }
     ];
 
     function cargarModal(indice) {
@@ -44,5 +44,21 @@
     }
 
     document.getElementById("year").textContent =
-       new Date().getFullYear();
-</script>
+    new Date().getFullYear();
+
+    const hamburguesa = document.getElementById("hamburguesa");
+    const menu = document.getElementById("menu");
+
+hamburguesa.addEventListener("click", () => {
+        menu.classList.toggle("activo");
+    hamburguesa.classList.toggle("activo");
+});
+
+
+document.querySelectorAll(".menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("activo");
+            hamburguesa.classList.remove("activo");
+        });
+});
+
