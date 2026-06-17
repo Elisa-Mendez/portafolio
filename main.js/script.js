@@ -46,8 +46,9 @@ function cargarModal(indice) {
 document.getElementById("year").textContent =
     new Date().getFullYear();
 
+    
 const hamburguesa = document.getElementById("hamburguesa");
-const menu = document.getElementById("menu");
+const menu = document.querySelector(".menu");
 
 hamburguesa.addEventListener("click", () => {
     menu.classList.toggle("activo");
