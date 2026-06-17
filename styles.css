@@ -679,14 +679,21 @@ header {
     background: var(--oscuro);
 }
 
-.card-imagen img {
+.card-imagen a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-imagen img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .4s ease;
+    cursor: pointer;
 }
 
-.proyecto-card:hover .card-imagen img {
+.card-imagen:hover img {
     transform: scale(1.06);
 }
 
@@ -701,7 +708,7 @@ header {
     transition: opacity .3s;
 }
 
-.proyecto-card:hover .card-overlay {
+.card-imagen:hover .card-overlay {
     opacity: 1;
 }
 
